@@ -10,17 +10,13 @@ class ModelScreener():
     Perform model screening with standard hyperparameters.
 
     Parameters:
-    - X_train: Training data
+    - x_train: Training data
     - y_train: Training labels
     - models: A dictionary: {model names: model objects}
+    - metrics: Scoring metrics
     - dataset_name: Optional, a string to identify the dataset
     - random_state: Optional, random seed for reproducibility
     - cv: Optional, number of cross-validation folds
-    - n_iter: Optional, number of iterations for randomized search
-    - metrics : Scoring metrics
-
-    Returns:
-    - A dataframe containing model names and evaluation metrics
     """
     
     def __init__(self, x_train, y_train, models, metrics, dataset_name="", 
@@ -35,7 +31,10 @@ class ModelScreener():
         self.results = None
         self.results_df = None
     
-    def screen(self):
+    def screen_models(self):
+        """
+        Run the model screening process.
+        """
         results = {}
 
         for model_name, model in self.models.items():
@@ -59,14 +58,28 @@ class ModelScreener():
             results[model_name] = intermediate_results
         self.results = results
     
-    def results_df(self):
-        # Transform results dictionary in simple dataframe
+    def transform_to_df(self):
+        """
+        Transform results dictionary in simple dataframe.
+        """
         self.results_df = pd.DataFrame(self.results)
 
 def main(x_train, y_train, models, metrics):
+    """
+    Main function to run the model screening process.
+
+    Parameters:
+    - x_train: Training data
+    - y_train: Training labels
+    - models: A dictionary: {model names: model objects}
+    - metrics: Scoring metrics
+
+    Returns:
+    - DataFrame containing model names and evaluation metrics
+    """
     model_screener = ModelScreener(x_train, y_train, models, metrics)
-    model_screener.screen()
-    model_screener.results_df()
+    model_screener.screen_models()
+    model_screener.transform_to_df()
     return model_screener.results_df
 
 if __name__ == "__main__":

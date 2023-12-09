@@ -10,7 +10,7 @@ Simply browse through the scripts and functions available in this repository. Ea
 
 Here's a brief overview of what you'll find in the CodeToolbox:
 
-- **ModelScreener.py:** The Model Screener is a Python utility that facilitates the screening of machine learning models by evaluating their performance with standard hyperparameters and generating a summary report.
+- **model_screener.py:** The Model Screener is a Python utility that facilitates the screening of machine learning models by evaluating their performance with standard hyperparameters and generating a summary report.
 
 ## License
 

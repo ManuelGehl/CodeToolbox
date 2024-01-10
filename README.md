@@ -2,15 +2,13 @@
 
 This repository is a collection of small scripts and functions that I use and reuse in various projects. 
 
-## Usage
-
-Simply browse through the scripts and functions available in this repository. Each script is designed to be self-contained, making it easy to integrate into your projects. Feel free to adapt and modify the code to suit your specific needs.
-
 ## Contents
 
 Here's a brief overview of what you'll find in the CodeToolbox:
 
 - **model_screener.py:** The Model Screener is a Python utility that facilitates the screening of machine learning models by evaluating their performance with standard hyperparameters and generating a summary report.
+- **reverse_complement.py:** Computes the reverse complement of a DNA sequence and returns that transformed sequence as a string.
+- **fasta_reader.py:** Reads DNA sequences from a FASTA file and returns a dictionary of sequence identifiers and sequences.
 
 ## License
 

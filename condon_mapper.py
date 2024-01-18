@@ -47,6 +47,9 @@ def codon_mapping(sequence: str, mode: str) -> str:
     # Select appropriate codon table
     codon_table = DNA_CODON_TABLE if mode == "DNA" else RNA_CODON_TABLE
     
+    # Ensure that sequence is in upper case
+    sequence = sequence.upper()
+    
     # Loop trough the sequence and map each codon to an amino acid
     amino_acid_seq = []
     for codon_index in range(0, len(sequence), 3):
